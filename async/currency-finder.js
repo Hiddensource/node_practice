@@ -5,18 +5,14 @@ const getCountry = (currency) => {
     return axios.get(url).then((result) => {
         return result.data.map((res) => res.name);
     });
-
 }
 
 const getCurrency = (country) => {
     let url = `https://restcountries.eu/rest/v2/name/${country}?fullText=true`;
     return axios.get(url).then((result) => {
-
         return (result.data[0].currencies[0].code);
     });
-
 }
-
 
 
 const getList = async (countryName) => {
